@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   $('a.blog-button').click(function() {
+    $('.navigation-wrapper').toggleClass('visible animated bounceInDown');
     if ($('.panel-cover').hasClass('panel-cover--collapsed')) return;
     currentWidth = $('.panel-cover').width();
     $('.panel-cover').addClass('animated panel-cover--collapsed slideInLeft');
