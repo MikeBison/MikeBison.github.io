@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      JavaScript中的对象 | MikeBison 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="MikeBison">
+    
+    
+
+    <meta name="description" content="JavaScript中的对象作为一个前端新人，一直对面向对象认识的不是很清楚，大家都在说面向对象的特征:封装,继承,多态。知道了概念，看看自己的代码却依然还是流水账式。不能在实践中应用学到的知识，那是无法进步的。
+基本概念面向对象术语摘自w3school
+对象
+
+ECMA-262 把对象（object）定义为“属性的无序集合，每个属性存放一个原始值、对象或函数”。严格来说，这意味着对象是无特定顺">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript中的对象 | MikeBison">
+<meta property="og:url" content="http://MikeBison.com/2016/05/21/JS中的对象/index.html">
+<meta property="og:site_name" content="MikeBison">
+<meta property="og:description" content="JavaScript中的对象作为一个前端新人，一直对面向对象认识的不是很清楚，大家都在说面向对象的特征:封装,继承,多态。知道了概念，看看自己的代码却依然还是流水账式。不能在实践中应用学到的知识，那是无法进步的。
+基本概念面向对象术语摘自w3school
+对象
+
+ECMA-262 把对象（object）定义为“属性的无序集合，每个属性存放一个原始值、对象或函数”。严格来说，这意味着对象是无特定顺">
+<meta property="og:updated_time" content="2016-05-21T13:53:29.186Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript中的对象 | MikeBison">
+<meta name="twitter:description" content="JavaScript中的对象作为一个前端新人，一直对面向对象认识的不是很清楚，大家都在说面向对象的特征:封装,继承,多态。知道了概念，看看自己的代码却依然还是流水账式。不能在实践中应用学到的知识，那是无法进步的。
+基本概念面向对象术语摘自w3school
+对象
+
+ECMA-262 把对象（object）定义为“属性的无序集合，每个属性存放一个原始值、对象或函数”。严格来说，这意味着对象是无特定顺">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MikeBison</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          我们不在乎成功</br>
+          我们不畏惧失败</br>
+          因为在灵魂的权衡中</br>
+          没有什么算成功</br>
+          没有什么算失败</br>
+          我们要做的</br>
+          只是作为世界的一个节点</br>
+          构建整个世界</br>
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/MikeBison" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <li class="navigation__item">
+      <a href="http://weibo.com/u/1723898163?topnav=1&wvr=6&topsug=1&is_all=1" title="">
+        <i class='icon cs-icon-weibo'></i>
+        <span class="label">Douban</span>
+      </a>
+    </li>
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">JavaScript中的对象</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-05-21" class="post-meta__date date">2016-05-21</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/前端知识/">前端知识</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/js/">js</a>, <a class="tags-link" href="/tags/学习笔记/">学习笔记</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <hr>
+<h2 id="JavaScript中的对象"><a href="#JavaScript中的对象" class="headerlink" title="JavaScript中的对象"></a>JavaScript中的对象</h2><p>作为一个前端新人，一直对面向对象认识的不是很清楚，大家都在说面向对象的特征:封装,继承,多态。知道了概念，看看自己的代码却依然还是流水账式。不能在实践中应用学到的知识，那是无法进步的。</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><h4 id="面向对象术语"><a href="#面向对象术语" class="headerlink" title="面向对象术语"></a>面向对象术语</h4><p>摘自w3school</p>
+<p><strong>对象</strong></p>
+<blockquote>
+<p>ECMA-262 把对象（object）定义为“属性的无序集合，每个属性存放一个原始值、对象或函数”。严格来说，这意味着对象是无特定顺序的值的数组。<br>尽管 ECMAScript 如此定义对象，但它更通用的定义是基于代码的名词（人、地点或事物）的表示。</p>
+</blockquote>
+<p><strong>类</strong></p>
+<blockquote>
+<p>每个对象都由类定义，可以把类看做对象的配方。类不仅要定义对象的接口（interface）（开发者访问的属性和方法），还要定义对象的内部工作（使属性和方法发挥作用的代码）。编译器和解释程序都根据类的说明构建对象。</p>
+</blockquote>
+<p><strong>实例</strong></p>
+<blockquote>
+<p>程序使用类创建对象时，生成的对象叫作类的实例（instance）。对类生成的对象的个数的唯一限制来自于运行代码的机器的物理内存。每个实例的行为相同，但实例处理一组独立的数据。由类创建对象实例的过程叫做实例化（instantiation）。<br>在前面的章节我们提到过，ECMAScript 并没有正式的类。相反，ECMA-262 把对象定义描述为对象的配方。这是 ECMAScript 逻辑上的一种折中方案，因为对象定义实际上是对象自身。即使类并不真正存在，我们也把对象定义叫做类，因为大多数开发者对此术语更熟悉，而且从功能上说，两者是等价的。</p>
+</blockquote>
+<h3 id="对象的构造"><a href="#对象的构造" class="headerlink" title="对象的构造"></a>对象的构造</h3><p>看javascript高级程序设计这本书的时候，知道了对象有很多种构造方式。下面将详细的列出各种构造方式示例，以及为何使用的原因</p>
+<h4 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h4><pre><code>function createCar(sColor,iDoors,iMpg) {
+  var oTempCar = new Object;
+  oTempCar.color = sColor;
+  oTempCar.doors = iDoors;
+  oTempCar.mpg = iMpg;
+  oTempCar.showColor = function() {
+    alert(this.color);
+  };
+  return oTempCar;
+}
+
+var oCar1 = createCar();
+var oCar2 = createCar();
+</code></pre><p> 这是新手最常用的方式，通过每次调用函数创建一个空对象再为其赋值从而返回不同的对象。这种方法一直被诟病，一方面是由于这看起来并不像其他语言一样用new实例化，显得不那么正规，另一方面我们可以看到，每次创建对象都在对象中创建了一个showColor函数(造成了内存的浪费,影响性能)，但我们的目的其实是多个实例共享同一个函数。</p>
+<p> 所以这种方法被改造为：</p>
+<pre><code>function showColor() {
+  alert(this.color);
+};
+
+function createCar(sColor,iDoors,iMpg) {
+  var oTempCar = new Object;
+  oTempCar.color = sColor;
+  oTempCar.doors = iDoors;
+  oTempCar.mpg = iMpg;
+  oTempCar.showColor = showColor
+  return oTempCar;
+}
+
+var oCar1 = createCar();
+var oCar2 = createCar();
+</code></pre><p>由于函数是引用类型，只保存了对象的“址”（指针），所以每次创建对象时候不会多次创建showColor函数。同时保证每个实例都可以调用showColor方法。但是这种方法依然没有解决语义化的问题（并没有使用new关键字）所以又有开发者定义了<strong>构造函数</strong>方式</p>
+<h4 id="构造函数方式"><a href="#构造函数方式" class="headerlink" title="构造函数方式"></a>构造函数方式</h4><p>构造函数模式构造相同对象的代码如下：</p>
+<pre><code>function Car(sColor,iDoors,iMpg) {
+  this.color = sColor;
+  this.doors = iDoors;
+  this.mpg = iMpg;
+  this.showColor = function() {
+    alert(this.color);
+  };
+}
+
+var oCar1 = new Car(&quot;red&quot;,4,23);
+var oCar2 = new Car(&quot;blue&quot;,3,25);
+</code></pre><p>这种方式使用了new关键字，使代码语义化。</p>
+<p>而且在构造函数内没有创建对象，而是使用 this 关键字。<strong>使用 new 运算符构造函数时，在执行第一行代码前先创建一个对象，只有用 this 才能访问该对象。然后可以直接赋予 this 属性，默认情况下是构造函数的返回值（不必使用 return 运算符）</strong>（加重字体说明了new运算符到底做了什么）。</p>
+<p>这样做同样创建了多个showColor函数实例，你当然也可以在函数外部定义showColor再添加引用，但是这样就又不在语义化了。</p>
+<h4 id="原型方式"><a href="#原型方式" class="headerlink" title="原型方式"></a>原型方式</h4><p>每个对象都有一个prototype属性，这个属性可以看做是创建这个对象的原型。比如说数组的prototype是Array。</p>
+<p>原型方式创建对象代码示例如下：</p>
+<pre><code>function Car() {
+}
+
+Car.prototype.color = &quot;blue&quot;;
+Car.prototype.doors = 4;
+Car.prototype.mpg = 25;
+Car.prototype.showColor = function() {
+  alert(this.color);
+};
+
+var oCar1 = new Car();
+var oCar2 = new Car();
+</code></pre><p>这种方式创建出的对象都具有相同的属性，同时并没有示例化多个showColor函数。而且有属性instanceof 指向他们的创建者。</p>
+<p>比如由于typeOf不能判断一个数组，那么可以使用instanceOf来判断</p>
+<pre><code>var a = [1,2,3]
+a instanceOf Array == true
+</code></pre><p>但是原型方式也不尽人意，因为这种方式创建出的对象的属性都是相同的，我们必须实例化一个对象以后再一个个改掉他们的属性。保存对象的引用是正确的，但是属性并不需要一样。</p>
+<h4 id="混合的构造函数-原型方式"><a href="#混合的构造函数-原型方式" class="headerlink" title="混合的构造函数/原型方式"></a>混合的构造函数/原型方式</h4><p>我们既然已经见识了以上各种方式，那么我们可以将他们的优点结合：</p>
+<pre><code>function Car(sColor,iDoors,iMpg){
+    this.color = sColor;
+    this.doors = iDoors;
+      this.mpg = iMpg;
+      this.drivers = new Array(&quot;Mike&quot;,&quot;John&quot;);
+}
+
+Car.prototype.showColor = function(){
+    alert(this.color)
+}
+
+var car1 = new Car(&quot;red&quot;,4,23);
+var car2 = new Car(&quot;blue&quot;,4,25)
+
+car1.driver.push(&quot;Stack&quot;)
+
+alert(car1.drivers);    //输出 &quot;Mike,John,Bill&quot;
+alert(car2.drivers);    //输出 &quot;Mike,John&quot;
+
+car1.showColor()         //输出 &quot;red&quot;
+car2.showColor()         //输出 &quot;blue&quot;
+</code></pre><p>这种方法的showColor方法只创建了一个函数，并且使用了new操作符，又有各子的属性，不会多个实例共享相同的属性，使用了原型方式，所以能用instanceOf判断创建者。</p>
+<p>但是有些开发者仍然认为这样不够完美，代码哲学中将对象对象看做是现实个体的反映，世界是由对象间的互相作用产生的。（你不能先创建半个个体，再创建另一半）。</p>
+<h4 id="动态原型方法"><a href="#动态原型方法" class="headerlink" title="动态原型方法"></a>动态原型方法</h4><p>动态原型方法的基本想法与混合的构造函数/原型方式相同，即在构造函数内定义非函数属性，而函数属性则利用原型属性定义。唯一的区别是赋予对象方法的位置。下面是用动态原型方法重写的 Car 类：</p>
+<pre><code>function Car(sColor,iDoors,iMpg) {
+  this.color = sColor;
+  this.doors = iDoors;
+  this.mpg = iMpg;
+  this.drivers = new Array(&quot;Mike&quot;,&quot;John&quot;);
+
+  if (typeof Car._initialized == &quot;undefined&quot;) {
+    Car.prototype.showColor = function() {
+      alert(this.color);
+    };
+
+    Car._initialized = true;
+  }
+}
+</code></pre><p>该方法使用标志（_initialized）来判断是否已给原型赋予了任何方法，该方法只创建并赋值一次。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这些东西是js中需要理解的东西，理解的越深，越能在代码中得心应手的应用，同时是我自己学习的一些要点的记录，也希望能够帮到和我一样新的同学。</p>
+<p>我个人认为混合模式能更多的使用，因为_initialized这种属性在代码中没有实际的作用。</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/05/21/JS中的对象/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"MikeBison"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+                autoDetectHeadings: true,
+		      	enableToTopButton: true,
+		      	title: "文章内容",
+		      	itemPrefix: "-",
+		      	css: {
+		          fontSize: "14px",
+		          largeFontSize: "18px",
+		      	},
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
