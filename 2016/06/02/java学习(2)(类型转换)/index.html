@@ -7,7 +7,7 @@
     
 
     <title>
-      归档 
+      java学习(2) 类型转换 | MikeBison 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,16 +16,49 @@
     
     
 
-    <meta name="description" content="个人静态博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="http://MikeBison.com/archive/index.html">
+    <meta name="description" content="java学习(1)声明:仅供个人巩固学习使用.
+类型转换不同数据类型转换可能损失精度
+java计算中会发生自动类型提升
+示例:
+byte b = 3;
+b = (byte)(b + 2);
+将b+2的和强制转换为byte类型
+一些坑linux系统中的转移字符是一个字符
+windows中的转义字符是两个字符
+short s = 3;
+s = s + 5
+运算了俩次,第一次为s+5第二次为给s赋值,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习(2) 类型转换 | MikeBison">
+<meta property="og:url" content="http://MikeBison.com/2016/06/02/java学习(2)(类型转换)/index.html">
 <meta property="og:site_name" content="MikeBison">
-<meta property="og:description" content="个人静态博客">
-<meta property="og:updated_time" content="2016-05-21T07:41:29.077Z">
+<meta property="og:description" content="java学习(1)声明:仅供个人巩固学习使用.
+类型转换不同数据类型转换可能损失精度
+java计算中会发生自动类型提升
+示例:
+byte b = 3;
+b = (byte)(b + 2);
+将b+2的和强制转换为byte类型
+一些坑linux系统中的转移字符是一个字符
+windows中的转义字符是两个字符
+short s = 3;
+s = s + 5
+运算了俩次,第一次为s+5第二次为给s赋值,">
+<meta property="og:updated_time" content="2016-06-03T14:50:23.993Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="归档">
-<meta name="twitter:description" content="个人静态博客">
+<meta name="twitter:title" content="java学习(2) 类型转换 | MikeBison">
+<meta name="twitter:description" content="java学习(1)声明:仅供个人巩固学习使用.
+类型转换不同数据类型转换可能损失精度
+java计算中会发生自动类型提升
+示例:
+byte b = 3;
+b = (byte)(b + 2);
+将b+2的和强制转换为byte类型
+一些坑linux系统中的转移字符是一个字符
+windows中的转义字符是两个字符
+short s = 3;
+s = s + 5
+运算了俩次,第一次为s+5第二次为给s赋值,">
     
     
     
@@ -206,74 +239,91 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">归档</h1>
+    <h1 class="post-title">java学习(2) 类型转换</h1>
 
-    <section id="post-content" class="article-content post">
-        
-    </section>
+    
 
+    <div class="post-meta">
+      <time datetime="2016-06-02" class="post-meta__date date">2016-06-02</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/java/">-java</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/java-学习笔记/">-java -学习笔记</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
 
   </header>
 
+  <section id="post-content" class="article-content post">
+    <hr>
+<h2 id="java学习-1"><a href="#java学习-1" class="headerlink" title="java学习(1)"></a>java学习(1)</h2><p><strong>声明</strong>:仅供个人巩固学习使用.</p>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><p>不同数据类型转换可能损失精度</p>
+<p>java计算中会发生自动类型提升</p>
+<p>示例:</p>
+<pre><code>byte b = 3;
+b = (byte)(b + 2);
+</code></pre><p>将b+2的和强制转换为byte类型</p>
+<h3 id="一些坑"><a href="#一些坑" class="headerlink" title="一些坑"></a>一些坑</h3><p>linux系统中的转移字符是一个字符</p>
+<p>windows中的转义字符是两个字符</p>
+<pre><code>short s = 3;
+s = s + 5
+</code></pre><p>运算了俩次,第一次为s+5<br>第二次为给s赋值,由于和的类型补位short,所以编译失败</p>
+<pre><code>s += 3;
+</code></pre><p>运行了一次,编译通过</p>
+<p>单双与号区别:</p>
+<pre><code>双与有短路运算.
+</code></pre><p>一个int在内存中占4个8位</p>
+<p>一个数左移计算为2的位移次方乘以这个数,右移相反,位移是运算速度最快的,右移最高位补什么由原有最高位决定,原来为0则补0,为1则补1,无符号右移最高位永远补0</p>
+<p>同一个数异或俩次还是原数</p>
+<p>俩个数换位:</p>
+<pre><code>int n=3,m=4;    
+n = n^m;
+m = n^m;//m = n^m^m;//原n
+n = n^m;//n = n^(n^m);//原m
+        //n = 4;m = 3;
+</code></pre>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/06/02/java学习(2)(类型转换)/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"MikeBison"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
 </article>
 
-<div class="archive-meta">
 
-
-    <h3>分类</h3>
-
-    <div class="categorieslist">
-        
-          
-            <span><a href="/categories/java/" title="-java">-java<sup>2</sup></a></span>
-          
-        
-          
-            <span><a href="/categories/计算机基础/" title="-计算机基础">-计算机基础<sup>1</sup></a></span>
-          
-        
-          
-            <span><a href="/categories/前端知识/" title="前端知识">前端知识<sup>1</sup></a></span>
-          
-        
-     </div>
-
-
-
-    <h3>标签</h3>
-    <div class="tagslist">
-        
-            
-                <span><a href="/tags/GitHub/" title="GitHub">GitHub<sup>3</sup></a></span>
-            
-        
-            
-                <span><a href="/tags/java-学习笔记/" title="-java -学习笔记">-java -学习笔记<sup>2</sup></a></span>
-            
-        
-            
-                <span><a href="/tags/基础-学习笔记/" title="-基础 -学习笔记">-基础 -学习笔记<sup>1</sup></a></span>
-            
-        
-            
-                <span><a href="/tags/js/" title="js">js<sup>1</sup></a></span>
-            
-        
-            
-                <span><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>1</sup></a></span>
-            
-        
-    </div>
-
-
-
-    <h3>归档</h3>
-    <div class="archiveslist">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">5</span></li></ul>
-    </div>
-
-
-</div>
             <footer class="footer">
 
     <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
@@ -301,6 +351,26 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+                autoDetectHeadings: true,
+		      	enableToTopButton: true,
+		      	title: "文章内容",
+		      	itemPrefix: "-",
+		      	css: {
+		          fontSize: "14px",
+		          largeFontSize: "18px",
+		      	},
+            });
+        });
+    </script>
+
+
     
     
 
