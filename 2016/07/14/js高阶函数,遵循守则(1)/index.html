@@ -16,34 +16,28 @@
     
     
 
-    <meta name="description" content="###js高级,遵循守则(1)###
-####高阶函数####
-#####1.for … in 循环出的key值类型#####
-用for … in 函数得到的key值是String而不是Number
+    <meta name="description" content="js高级,遵循守则(1)1.for … in 循环出的key值类型用for … in 函数得到的key值是String而不是Number
 var a = [1,23,5,34];
 for (i in a) {
-    console.log(i); //&amp;apos;0&amp;apos;,&amp;apos;1&amp;apos;,&amp;apos;2&amp;apos;">
+    console.log(i); //&amp;apos;0&amp;apos;,&amp;apos;1&amp;apos;,&amp;apos;2&amp;apos;,&amp;apos;3&amp;apos;
+    console.log(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js高级,遵循守则(1) 笔记记录 | MikeBison">
 <meta property="og:url" content="http://MikeBison.com/2016/07/14/js高阶函数,遵循守则(1)/index.html">
 <meta property="og:site_name" content="MikeBison">
-<meta property="og:description" content="###js高级,遵循守则(1)###
-####高阶函数####
-#####1.for … in 循环出的key值类型#####
-用for … in 函数得到的key值是String而不是Number
+<meta property="og:description" content="js高级,遵循守则(1)1.for … in 循环出的key值类型用for … in 函数得到的key值是String而不是Number
 var a = [1,23,5,34];
 for (i in a) {
-    console.log(i); //&amp;apos;0&amp;apos;,&amp;apos;1&amp;apos;,&amp;apos;2&amp;apos;">
-<meta property="og:updated_time" content="2016-07-14T16:09:47.294Z">
+    console.log(i); //&amp;apos;0&amp;apos;,&amp;apos;1&amp;apos;,&amp;apos;2&amp;apos;,&amp;apos;3&amp;apos;
+    console.log(">
+<meta property="og:updated_time" content="2016-07-14T16:20:26.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js高级,遵循守则(1) 笔记记录 | MikeBison">
-<meta name="twitter:description" content="###js高级,遵循守则(1)###
-####高阶函数####
-#####1.for … in 循环出的key值类型#####
-用for … in 函数得到的key值是String而不是Number
+<meta name="twitter:description" content="js高级,遵循守则(1)1.for … in 循环出的key值类型用for … in 函数得到的key值是String而不是Number
 var a = [1,23,5,34];
 for (i in a) {
-    console.log(i); //&amp;apos;0&amp;apos;,&amp;apos;1&amp;apos;,&amp;apos;2&amp;apos;">
+    console.log(i); //&amp;apos;0&amp;apos;,&amp;apos;1&amp;apos;,&amp;apos;2&amp;apos;,&amp;apos;3&amp;apos;
+    console.log(">
     
     
     
@@ -256,18 +250,14 @@ classes that you can use:
 
   <section id="post-content" class="article-content post">
     <hr>
-<p>###js高级,遵循守则(1)###</p>
-<p>####高阶函数####</p>
-<p>#####1.for … in 循环出的key值类型#####</p>
-<p>用for … in 函数得到的key值是String而不是Number</p>
+<h2 id="js高级-遵循守则-1"><a href="#js高级-遵循守则-1" class="headerlink" title="js高级,遵循守则(1)"></a>js高级,遵循守则(1)</h2><h3 id="1-for-…-in-循环出的key值类型"><a href="#1-for-…-in-循环出的key值类型" class="headerlink" title="1.for … in 循环出的key值类型"></a>1.for … in 循环出的key值类型</h3><p>用for … in 函数得到的key值是String而不是Number</p>
 <pre><code>var a = [1,23,5,34];
 for (i in a) {
     console.log(i); //&apos;0&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;
     console.log(typeof(i)) //string
     console.log(a[i]); //1,23,5,34
 }
-</code></pre><p>#####2.Map对象(ES6新增)#####</p>
-<p>Map是一组键值对的结构，具有极快的查找速度。</p>
+</code></pre><h3 id="2-Map对象-ES6新增"><a href="#2-Map对象-ES6新增" class="headerlink" title="2.Map对象(ES6新增)"></a>2.Map对象(ES6新增)</h3><p>Map是一组键值对的结构，具有极快的查找速度。</p>
 <p>举个例子，假设要根据同学的名字查找对应的成绩，如果用Array实现，需要两个Array：</p>
 <pre><code>var names = [&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;];
 var scores = [95, 75, 85];
@@ -288,8 +278,7 @@ m.get(&apos;Adam&apos;); // undefined
 m.set(&apos;Adam&apos;, 67);
 m.set(&apos;Adam&apos;, 88);
 m.get(&apos;Adam&apos;); // 88
-</code></pre><p>#####3.Set对象(ES6新增)#####</p>
-<p>Set和Map类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在Set中，没有重复的key。</p>
+</code></pre><h3 id="3-Set对象-ES6新增"><a href="#3-Set对象-ES6新增" class="headerlink" title="3.Set对象(ES6新增)"></a>3.Set对象(ES6新增)</h3><p>Set和Map类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在Set中，没有重复的key。</p>
 <p>要创建一个Set，需要提供一个Array作为输入，或者直接创建一个空Set：</p>
 <pre><code>var s1 = new Set(); // 空Set
 var s2 = new Set([1, 2, 3]); // 含1, 2, 3
@@ -309,8 +298,7 @@ s; // Set {1, 2, 3, &quot;3&quot;}
 s; // Set {1, 2, 3}
 s.delete(3);
 s; // Set {1, 2}
-</code></pre><p>#####4.Map和Set的遍历for..of(ES6新增)#####</p>
-<p>用for … of循环遍历集合，用法如下：</p>
+</code></pre><h3 id="4-Map和Set的遍历for-of-ES6新增"><a href="#4-Map和Set的遍历for-of-ES6新增" class="headerlink" title="4.Map和Set的遍历for..of(ES6新增)"></a>4.Map和Set的遍历for..of(ES6新增)</h3><p>用for … of循环遍历集合，用法如下：</p>
 <pre><code>var a = [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;];
 var s = new Set([&apos;A&apos;, &apos;B&apos;, &apos;C&apos;]);
 var m = new Map([[1, &apos;x&apos;], [2, &apos;y&apos;], [3, &apos;z&apos;]]);
@@ -361,8 +349,7 @@ m.forEach(function (value, key, map) {
 a.forEach(function (element) {
     alert(element);
 });
-</code></pre><p>#####5.rest参数(ES6新增)#####</p>
-<p>rest可获取函数传入的所有参数(类似arguments),更方便的获取没有定义的参数</p>
+</code></pre><h3 id="5-rest参数-ES6新增"><a href="#5-rest参数-ES6新增" class="headerlink" title="5.rest参数(ES6新增)"></a>5.rest参数(ES6新增)</h3><p>rest可获取函数传入的所有参数(类似arguments),更方便的获取没有定义的参数</p>
 <pre><code>function foo(a, b) {
     var i, rest = [];
     if (arguments.length &gt; 2) {
@@ -394,8 +381,7 @@ foo(1);
 // Array []
 </code></pre><p>rest参数只能写在最后，前面用…标识，从运行结果可知，传入的参数先绑定a、b，多余的参数以数组形式交给变量rest，所以，不再需要arguments我们就获取了全部参数。</p>
 <p>如果传入的参数连正常定义的参数都没填满，也不要紧，rest参数会接收一个空数组（注意不是undefined）。</p>
-<p>#####6.块级声明关键字let(ES6新增)#####</p>
-<p>由于JavaScript的变量作用域实际上是函数内部，我们在for循环等语句块中是无法定义具有局部作用域的变量的：</p>
+<h3 id="6-块级声明关键字let-ES6新增"><a href="#6-块级声明关键字let-ES6新增" class="headerlink" title="6.块级声明关键字let(ES6新增)"></a>6.块级声明关键字let(ES6新增)</h3><p>由于JavaScript的变量作用域实际上是函数内部，我们在for循环等语句块中是无法定义具有局部作用域的变量的：</p>
 <pre><code>&apos;use strict&apos;;
 
 function foo() {
@@ -414,8 +400,7 @@ function foo() {
     }
     i += 1; // SyntaxError
 }
-</code></pre><p>#####7.apply()和call()#####</p>
-<p>apply</p>
+</code></pre><h3 id="7-apply-和call"><a href="#7-apply-和call" class="headerlink" title="7.apply()和call()"></a>7.apply()和call()</h3><p>apply</p>
 <p>虽然在一个独立的函数调用中，根据是否是strict模式，this指向undefined或window，不过，我们还是可以控制this的指向的！</p>
 <p>要指定函数的this指向哪个对象，可以用函数本身的apply方法，它接收两个参数，第一个参数就是需要绑定的this变量，第二个参数是Array，表示函数本身的参数。</p>
 <p>用apply修复getAge()调用：</p>
