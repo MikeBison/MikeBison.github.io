@@ -36,7 +36,7 @@
 20013
 &amp;gt;&amp;gt;&amp;gt; chr(66)
 &amp;apos;B">
-<meta property="og:updated_time" content="2016-07-18T14:31:16.013Z">
+<meta property="og:updated_time" content="2016-07-18T14:37:12.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1.python字符串和编码 | MikeBison">
 <meta name="twitter:description" content="1.python字符串和编码python 是一门动态解释型高级编程语言
@@ -295,14 +295,11 @@ b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;
 <p>第二行注释是为了告诉Python解释器，按照UTF-8编码读取源代码，否则，你在源代码中写的中文输出可能会有乱码。</p>
 <p>申明了UTF-8编码并不意味着你的.py文件就是UTF-8编码的，必须并且要确保文本编辑器正在使用UTF-8 without BOM编码</p>
 <h4 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h4><p>在Python中，采用的格式化方式和C语言是一致的，用%实现，举例如下：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>‘Hello, %s’ % ‘world’<br>‘Hello, world’<br>‘Hi, %s, you have $%d.’ % (‘Michael’, 1000000)<br>‘Hi, Michael, you have $1000000.’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>你可能猜到了，%运算符就是用来格式化字符串的。在字符串内部，%s表示用字符串替换，%d表示用整数替换，有几个%?占位符，后面就跟几个变量或者值，顺序要对应好。如果只有一个%?，括号可以省略。</p>
+<pre><code>&gt;&gt;&gt; &apos;Hello, %s&apos; % &apos;world&apos;
+&apos;Hello, world&apos;
+&gt;&gt;&gt; &apos;Hi, %s, you have $%d.&apos; % (&apos;Michael&apos;, 1000000)
+&apos;Hi, Michael, you have $1000000.&apos;
+</code></pre><p>你可能猜到了，%运算符就是用来格式化字符串的。在字符串内部，%s表示用字符串替换，%d表示用整数替换，有几个%?占位符，后面就跟几个变量或者值，顺序要对应好。如果只有一个%?，括号可以省略。</p>
 <p>常见的占位符有：</p>
 <table style="border-collapse:collapse;text-align:center"><br>    <thead><br>        <tr><th>占位符</th><th>类型</th></tr><br>    </thead><br>    <tbody><br>        <tr><td>%d</td><td>整数</td></tr><br>        <tr><td>%f</td><td>浮点数</td></tr><br>        <tr><td>%s</td><td>字符串</td></tr><br>        <tr><td>%x</td><td>十六进制整数</td></tr><br>    </tbody><br></table>
 
