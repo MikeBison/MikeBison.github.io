@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      1.python字符串和编码 | MikeBison 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="MikeBison">
+    
+    
+
+    <meta name="description" content="1.python字符串和编码python 是一门动态解释型高级编程语言
+字符转换python提供了ord方法和chr方法,粉笔将字符转换为unicode编码,和把一个unicode编码转换为字符
+&amp;gt;&amp;gt;&amp;gt; ord(&amp;apos;A&amp;apos;)
+65
+&amp;gt;&amp;gt;&amp;gt; ord(&amp;apos;中&amp;apos;)
+20013
+&amp;gt;&amp;gt;&amp;gt; chr(66)
+&amp;apos;B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.python字符串和编码 | MikeBison">
+<meta property="og:url" content="http://MikeBison.com/2016/06/02/1.python字符串和编码/index.html">
+<meta property="og:site_name" content="MikeBison">
+<meta property="og:description" content="1.python字符串和编码python 是一门动态解释型高级编程语言
+字符转换python提供了ord方法和chr方法,粉笔将字符转换为unicode编码,和把一个unicode编码转换为字符
+&amp;gt;&amp;gt;&amp;gt; ord(&amp;apos;A&amp;apos;)
+65
+&amp;gt;&amp;gt;&amp;gt; ord(&amp;apos;中&amp;apos;)
+20013
+&amp;gt;&amp;gt;&amp;gt; chr(66)
+&amp;apos;B">
+<meta property="og:updated_time" content="2016-07-18T14:31:16.013Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1.python字符串和编码 | MikeBison">
+<meta name="twitter:description" content="1.python字符串和编码python 是一门动态解释型高级编程语言
+字符转换python提供了ord方法和chr方法,粉笔将字符转换为unicode编码,和把一个unicode编码转换为字符
+&amp;gt;&amp;gt;&amp;gt; ord(&amp;apos;A&amp;apos;)
+65
+&amp;gt;&amp;gt;&amp;gt; ord(&amp;apos;中&amp;apos;)
+20013
+&amp;gt;&amp;gt;&amp;gt; chr(66)
+&amp;apos;B">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MikeBison</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          我们不在乎成功</br>
+          我们不畏惧失败</br>
+          因为在灵魂的权衡中</br>
+          没有什么算成功</br>
+          没有什么算失败</br>
+          我们要做的</br>
+          只是作为世界的一个节点</br>
+          构建整个世界</br>
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/MikeBison" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <li class="navigation__item">
+      <a href="http://weibo.com/u/1723898163?topnav=1&wvr=6&topsug=1&is_all=1" title="">
+        <i class='icon cs-icon-weibo'></i>
+        <span class="label">Douban</span>
+      </a>
+    </li>
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">1.python字符串和编码</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-06-02" class="post-meta__date date">2016-06-02</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/python/">-python</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/python-学习笔记-廖雪峰/">-python -学习笔记 -廖雪峰</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <hr>
+<h3 id="1-python字符串和编码"><a href="#1-python字符串和编码" class="headerlink" title="1.python字符串和编码"></a>1.python字符串和编码</h3><p>python 是一门动态解释型高级编程语言</p>
+<h4 id="字符转换"><a href="#字符转换" class="headerlink" title="字符转换"></a>字符转换</h4><p>python提供了<strong>ord</strong>方法和<strong>chr</strong>方法,粉笔将字符转换为unicode编码,和把一个unicode编码转换为字符</p>
+<pre><code>&gt;&gt;&gt; ord(&apos;A&apos;)
+65
+&gt;&gt;&gt; ord(&apos;中&apos;)
+20013
+&gt;&gt;&gt; chr(66)
+&apos;B&apos;
+&gt;&gt;&gt; chr(25991)
+&apos;文&apos;
+</code></pre><p>我们收到或者要发送的文件一般保存为<strong>bytes</strong>类型,可以用<strong>encode()</strong>和<strong>decode()</strong>相互转换</p>
+<pre><code>&gt;&gt;&gt; &apos;ABC&apos;.encode(&apos;ascii&apos;)
+b&apos;ABC&apos;
+&gt;&gt;&gt; &apos;中文&apos;.encode(&apos;utf-8&apos;)
+b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;
+
+&gt;&gt;&gt; b&apos;ABC&apos;.decode(&apos;ascii&apos;)
+&apos;ABC&apos;
+&gt;&gt;&gt; b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;.decode(&apos;utf-8&apos;)
+&apos;中文&apos;
+</code></pre><p>注意: <font color="#ff0000" size="2">纯英文的str可以用ASCII编码为bytes，内容是一样的，含有中文的str可以用UTF-8编码为bytes。含有中文的str无法用ASCII编码，因为中文编码的范围超过了ASCII编码的范围，Python会报错。</font></p>
+<p><strong>len()</strong>函数计算的是str的字符数，如果换成<strong>bytes，len()</strong>函数就计算字节数：</p>
+<pre><code>&gt;&gt;&gt; len(b&apos;ABC&apos;)
+3
+&gt;&gt;&gt; len(b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;)
+6
+&gt;&gt;&gt; len(&apos;中文&apos;.encode(&apos;utf-8&apos;))
+6
+</code></pre><p>注意: <font size="2" color="#ff00">在操作字符串时，我们经常遇到str和bytes的互相转换。为了避免乱码问题，应当始终坚持使用UTF-8编码对str和bytes进行转换。</font></p>
+<h4 id="编码问题"><a href="#编码问题" class="headerlink" title="编码问题"></a>编码问题</h4><p>由于Python源代码也是一个文本文件，所以，当你的源代码中包含中文的时候，在保存源代码时，就需要务必指定保存为UTF-8编码。当Python解释器读取源代码时，为了让它按UTF-8编码读取，我们通常在文件开头写上这两行：</p>
+<pre><code>#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+</code></pre><p>第一行注释是为了告诉Linux/OS X系统，这是一个Python可执行程序，Windows系统会忽略这个注释；</p>
+<p>第二行注释是为了告诉Python解释器，按照UTF-8编码读取源代码，否则，你在源代码中写的中文输出可能会有乱码。</p>
+<p>申明了UTF-8编码并不意味着你的.py文件就是UTF-8编码的，必须并且要确保文本编辑器正在使用UTF-8 without BOM编码</p>
+<h4 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h4><p>在Python中，采用的格式化方式和C语言是一致的，用%实现，举例如下：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>‘Hello, %s’ % ‘world’<br>‘Hello, world’<br>‘Hi, %s, you have $%d.’ % (‘Michael’, 1000000)<br>‘Hi, Michael, you have $1000000.’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>你可能猜到了，%运算符就是用来格式化字符串的。在字符串内部，%s表示用字符串替换，%d表示用整数替换，有几个%?占位符，后面就跟几个变量或者值，顺序要对应好。如果只有一个%?，括号可以省略。</p>
+<p>常见的占位符有：</p>
+<table style="border-collapse:collapse;text-align:center"><br>    <thead><br>        <tr><th>占位符</th><th>类型</th></tr><br>    </thead><br>    <tbody><br>        <tr><td>%d</td><td>整数</td></tr><br>        <tr><td>%f</td><td>浮点数</td></tr><br>        <tr><td>%s</td><td>字符串</td></tr><br>        <tr><td>%x</td><td>十六进制整数</td></tr><br>    </tbody><br></table>
+
+<p>其中，格式化整数和浮点数还可以指定是否补0和整数与小数的位数：</p>
+<pre><code>&gt;&gt;&gt; &apos;%2d-%02d&apos; % (3, 1)
+&apos; 3-01&apos;
+&gt;&gt;&gt; &apos;%.2f&apos; % 3.1415926
+&apos;3.14&apos;
+</code></pre><p>如果你不太确定应该用什么，%s永远起作用，它会把任何数据类型转换为字符串：</p>
+<pre><code>&gt;&gt;&gt; &apos;Age: %s. Gender: %s&apos; % (25, True)
+</code></pre><p>‘Age: 25. Gender: True’<br>有些时候，字符串里面的%是一个普通字符怎么办？这个时候就需要转义，用%%来表示一个%：</p>
+<pre><code>&gt;&gt;&gt; &apos;growth rate: %d %%&apos; % 7
+&apos;growth rate: 7 %&apos;
+</code></pre><h4 id="list的插入"><a href="#list的插入" class="headerlink" title="list的插入"></a>list的插入</h4><p>list是一个可变的有序表，所以，可以往list中追加元素到末尾：</p>
+<pre><code>&gt;&gt;&gt; classmates.append(&apos;Adam&apos;)
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;, &apos;Adam&apos;]
+</code></pre><p>也可以把元素插入到指定的位置，比如索引号为1的位置：</p>
+<pre><code>&gt;&gt;&gt; classmates.insert(1, &apos;Jack&apos;)
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Jack&apos;, &apos;Bob&apos;, &apos;Tracy&apos;, &apos;Adam&apos;]
+</code></pre><p>要删除list末尾的元素，用pop()方法：</p>
+<pre><code>&gt;&gt;&gt; classmates.pop()
+&apos;Adam&apos;
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Jack&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
+</code></pre><p>要删除指定位置的元素，用pop(i)方法，其中i是索引位置：</p>
+<pre><code>&gt;&gt;&gt; classmates.pop(1)
+&apos;Jack&apos;
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
+</code></pre><p>要把某个元素替换成别的元素，可以直接赋值给对应的索引位置：</p>
+<pre><code>&gt;&gt;&gt; classmates[1] = &apos;Sarah&apos;
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Sarah&apos;, &apos;Tracy&apos;]
+</code></pre><p>list里面的元素的数据类型也可以不同，比如：</p>
+<pre><code>&gt;&gt;&gt; L = [&apos;Apple&apos;, 123, True]
+</code></pre><p>list元素也可以是另一个list，比如：</p>
+<pre><code>&gt;&gt;&gt; s = [&apos;python&apos;, &apos;java&apos;, [&apos;asp&apos;, &apos;php&apos;], &apos;scheme&apos;]
+&gt;&gt;&gt; len(s)
+4
+</code></pre><p>要注意s只有4个元素，其中s[2]又是一个list，如果拆开写就更容易理解了：</p>
+<pre><code>&gt;&gt;&gt; p = [&apos;asp&apos;, &apos;php&apos;]
+&gt;&gt;&gt; s = [&apos;python&apos;, &apos;java&apos;, p, &apos;scheme&apos;]
+</code></pre><h4 id="不可变list-tuple"><a href="#不可变list-tuple" class="headerlink" title="不可变list: tuple"></a>不可变list: tuple</h4><p>tuple是一个不可变的list,是没有append,或者insert,delete这些方法的,其他的获取元素的方法都和list一样</p>
+<p>定义方法为:</p>
+<pre><code>tuple = (1,2,3)
+</code></pre><p>如果要创建一个长度为1的tuple,如下:</p>
+<pre><code>tuple = (1,)
+</code></pre><p>如果tuple中的元素为list,那么list是可变的,比如:</p>
+<pre><code>a = [1,3,4,5]
+tuple = (1,3,a)//tuple(1,3,[1,3,4,5])
+a = [6,7,8,9]
+tuple = (1,3,[6,7,8,9])
+</code></pre>
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/06/02/1.python字符串和编码/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"MikeBison"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+                autoDetectHeadings: true,
+		      	enableToTopButton: true,
+		      	title: "文章内容",
+		      	itemPrefix: "-",
+		      	css: {
+		          fontSize: "14px",
+		          largeFontSize: "18px",
+		      	},
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

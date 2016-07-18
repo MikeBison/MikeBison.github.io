@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      2.python结构控制语句以及函数的传参 | MikeBison 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="MikeBison">
+    
+    
+
+    <meta name="description" content="2.python结构控制语句以及函数的传参结构控制语句if判断:
+if 条件 :
+    执行
+if elif 条件:
+    执行
+else:
+    执行
+while语句
+while 条件:
+    执行
+for循环
+for x in range(101):
+    print(x)
+dictPython内置了字典：dict的支持，dict全称dictionary，在其他语言中也称为map，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.python结构控制语句以及函数的传参 | MikeBison">
+<meta property="og:url" content="http://MikeBison.com/2016/06/02/2.python结构控制语句/index.html">
+<meta property="og:site_name" content="MikeBison">
+<meta property="og:description" content="2.python结构控制语句以及函数的传参结构控制语句if判断:
+if 条件 :
+    执行
+if elif 条件:
+    执行
+else:
+    执行
+while语句
+while 条件:
+    执行
+for循环
+for x in range(101):
+    print(x)
+dictPython内置了字典：dict的支持，dict全称dictionary，在其他语言中也称为map，">
+<meta property="og:updated_time" content="2016-07-18T14:31:04.152Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2.python结构控制语句以及函数的传参 | MikeBison">
+<meta name="twitter:description" content="2.python结构控制语句以及函数的传参结构控制语句if判断:
+if 条件 :
+    执行
+if elif 条件:
+    执行
+else:
+    执行
+while语句
+while 条件:
+    执行
+for循环
+for x in range(101):
+    print(x)
+dictPython内置了字典：dict的支持，dict全称dictionary，在其他语言中也称为map，">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MikeBison</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          我们不在乎成功</br>
+          我们不畏惧失败</br>
+          因为在灵魂的权衡中</br>
+          没有什么算成功</br>
+          没有什么算失败</br>
+          我们要做的</br>
+          只是作为世界的一个节点</br>
+          构建整个世界</br>
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/MikeBison" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <li class="navigation__item">
+      <a href="http://weibo.com/u/1723898163?topnav=1&wvr=6&topsug=1&is_all=1" title="">
+        <i class='icon cs-icon-weibo'></i>
+        <span class="label">Douban</span>
+      </a>
+    </li>
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">2.python结构控制语句以及函数的传参</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-06-02" class="post-meta__date date">2016-06-02</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/python/">-python</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/python-学习笔记-廖雪峰/">-python -学习笔记 -廖雪峰</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <hr>
+<h3 id="2-python结构控制语句以及函数的传参"><a href="#2-python结构控制语句以及函数的传参" class="headerlink" title="2.python结构控制语句以及函数的传参"></a>2.python结构控制语句以及函数的传参</h3><h4 id="结构控制语句"><a href="#结构控制语句" class="headerlink" title="结构控制语句"></a>结构控制语句</h4><p>if判断:</p>
+<pre><code>if 条件 :
+    执行
+if elif 条件:
+    执行
+else:
+    执行
+</code></pre><p>while语句</p>
+<pre><code>while 条件:
+    执行
+</code></pre><p>for循环</p>
+<pre><code>for x in range(101):
+    print(x)
+</code></pre><h4 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h4><p>Python内置了字典：dict的支持，dict全称dictionary，在其他语言中也称为map，使用键-值（key-value）存储</p>
+<p>通过计算key保存的地址找到对应的值</p>
+<pre><code>&gt;&gt;&gt; d = {&apos;Michael&apos;: 95, &apos;Bob&apos;: 75, &apos;Tracy&apos;: 85}
+&gt;&gt;&gt; d[&apos;Michael&apos;]
+95
+</code></pre><p>如果key不存在，dict就会报错：</p>
+<pre><code>&gt;&gt;&gt; d[&apos;Thomas&apos;]
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+KeyError: &apos;Thomas&apos;
+</code></pre><p>要避免key不存在的错误，有两种办法，一是通过in判断key是否存在：</p>
+<pre><code>&gt;&gt;&gt; &apos;Thomas&apos; in d
+False
+</code></pre><p>二是通过dict提供的get方法，如果key不存在，可以返回None，或者自己指定的value：</p>
+<pre><code>&gt;&gt;&gt; d.get(&apos;Thomas&apos;)
+&gt;&gt;&gt; d.get(&apos;Thomas&apos;, -1)
+-1
+</code></pre><p>注意：返回None的时候Python的交互式命令行不显示结果。</p>
+<p>要删除一个key，用pop(key)方法，对应的value也会从dict中删除：</p>
+<pre><code>&gt;&gt;&gt; d.pop(&apos;Bob&apos;)
+75
+&gt;&gt;&gt; d
+{&apos;Michael&apos;: 95, &apos;Tracy&apos;: 85}
+</code></pre><p>请务必注意，dict内部存放的顺序和key放入的顺序是没有关系的。</p>
+<p>和list比较，dict有以下几个特点：</p>
+<p>查找和插入的速度极快，不会随着key的增加而变慢；<br>需要占用大量的内存，内存浪费多。<br>而list相反：</p>
+<p>查找和插入的时间随着元素的增加而增加；<br>占用空间小，浪费内存很少。<br>所以，dict是用空间来换取时间的一种方法。</p>
+<p>dict可以用在需要高速查找的很多地方，在Python代码中几乎无处不在，正确使用dict非常重要，需要牢记的第一条就是dict的key必须是不可变对象。</p>
+<p>这是因为dict根据key来计算value的存储位置，如果每次计算相同的key得出的结果不同，那dict内部就完全混乱了。这个通过key计算位置的算法称为哈希算法（Hash）。</p>
+<p>要保证hash的正确性，作为key的对象就不能变。在Python中，字符串、整数等都是不可变的，因此，可以放心地作为key。而list是可变的，就不能作为key：</p>
+<pre><code>&gt;&gt;&gt; key = [1, 2, 3]
+&gt;&gt;&gt; d[key] = &apos;a list&apos;
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: unhashable type: &apos;list&apos;
+</code></pre><h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><p>set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。</p>
+<p>要创建一个set，需要提供一个list作为输入集合：</p>
+<pre><code>&gt;&gt;&gt; s = set([1, 2, 3])
+&gt;&gt;&gt; s
+{1, 2, 3}
+</code></pre><p>注意，传入的参数[1, 2, 3]是一个list，而显示的{1, 2, 3}只是告诉你这个set内部有1，2，3这3个元素，显示的顺序也不表示set是有序的。。</p>
+<p>重复元素在set中自动被过滤：</p>
+<pre><code>&gt;&gt;&gt; s = set([1, 1, 2, 2, 3, 3])
+&gt;&gt;&gt; s
+{1, 2, 3}
+</code></pre><p>通过add(key)方法可以添加元素到set中，可以重复添加，但不会有效果：</p>
+<pre><code>&gt;&gt;&gt; s.add(4)
+&gt;&gt;&gt; s
+{1, 2, 3, 4}
+&gt;&gt;&gt; s.add(4)
+&gt;&gt;&gt; s
+{1, 2, 3, 4}
+</code></pre><p>通过remove(key)方法可以删除元素：</p>
+<pre><code>&gt;&gt;&gt; s.remove(4)
+&gt;&gt;&gt; s
+{1, 2, 3}
+</code></pre><p>set可以看成数学意义上的无序和无重复元素的集合，因此，两个set可以做数学意义上的交集、并集等操作：</p>
+<pre><code>&gt;&gt;&gt; s1 = set([1, 2, 3])
+&gt;&gt;&gt; s2 = set([2, 3, 4])
+&gt;&gt;&gt; s1 &amp; s2
+{2, 3}
+&gt;&gt;&gt; s1 | s2
+{1, 2, 3, 4}
+</code></pre><h4 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h4><p>def关键字</p>
+<p>python中的函数可以设置默认参数</p>
+<p>如下</p>
+<pre><code>def sum (x,y=2):
+    return x+y
+</code></pre><p>当这个函数调用时,传入一个参数sum(5),得到的结果为7</p>
+<p>注意: <font color="#ff0000" size="2">实际参数在前,默认参数在后,不然会报错,而且默认参数必须指向不变对象,如tuple</font></p>
+<h5 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h5><p>在Python函数中，还可以定义可变参数。顾名思义，可变参数就是传入的参数个数是可变的，可以是1个、2个到任意个，还可以是0个。</p>
+<p>我们以数学题为例子，给定一组数字a，b，c……，请计算a2 + b2 + c2 + ……。</p>
+<p>要定义出这个函数，我们必须确定输入的参数。由于参数个数不确定，我们首先想到可以把a，b，c……作为一个list或tuple传进来，这样，函数可以定义如下：</p>
+<pre><code>def calc(numbers):
+    sum = 0
+    for n in numbers:
+        sum = sum + n * n
+    return sum
+</code></pre><p>但是调用的时候，需要先组装出一个list或tuple：</p>
+<pre><code>&gt;&gt;&gt; calc([1, 2, 3])
+14
+&gt;&gt;&gt; calc((1, 3, 5, 7))
+84
+</code></pre><p>如果利用可变参数，调用函数的方式可以简化成这样：</p>
+<pre><code>&gt;&gt;&gt; calc(1, 2, 3)
+14
+&gt;&gt;&gt; calc(1, 3, 5, 7)
+84
+所以，我们把函数的参数改为可变参数：
+
+def calc(*numbers):
+    sum = 0
+    for n in numbers:
+        sum = sum + n * n
+    return sum
+</code></pre><p>定义可变参数和定义一个list或tuple参数相比，仅仅在参数前面加了一个*号。在函数内部，参数numbers接收到的是一个tuple，因此，函数代码完全不变。但是，调用该函数时，可以传入任意个参数，包括0个参数：</p>
+<pre><code>&gt;&gt;&gt; calc(1, 2)
+5
+&gt;&gt;&gt; calc()
+0
+</code></pre><p>如果已经有一个list或者tuple，要调用一个可变参数怎么办？可以这样做：</p>
+<pre><code>&gt;&gt;&gt; nums = [1, 2, 3]
+&gt;&gt;&gt; calc(nums[0], nums[1], nums[2])
+14
+</code></pre><p>这种写法当然是可行的，问题是太繁琐，所以Python允许你在list或tuple前面加一个*号，把list或tuple的元素变成可变参数传进去：</p>
+<pre><code>&gt;&gt;&gt; nums = [1, 2, 3]
+&gt;&gt;&gt; calc(*nums)
+14
+</code></pre><p>*nums表示把nums这个list的所有元素作为可变参数传进去。这种写法相当有用，而且很常见。</p>
+<h4 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h4><p>可变参数允许你传入0个或任意个参数，这些可变参数在函数调用时自动组装为一个tuple。而关键字参数允许你传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dict。请看示例：</p>
+<pre><code>def person(name, age, **kw):
+    print(&apos;name:&apos;, name, &apos;age:&apos;, age, &apos;other:&apos;, kw)
+</code></pre><p>函数person除了必选参数name和age外，还接受关键字参数kw。在调用该函数时，可以只传入必选参数：</p>
+<pre><code>&gt;&gt;&gt; person(&apos;Michael&apos;, 30)
+name: Michael age: 30 other: {}
+也可以传入任意个数的关键字参数：
+
+&gt;&gt;&gt; person(&apos;Bob&apos;, 35, city=&apos;Beijing&apos;)
+name: Bob age: 35 other: {&apos;city&apos;: &apos;Beijing&apos;}
+&gt;&gt;&gt; person(&apos;Adam&apos;, 45, gender=&apos;M&apos;, job=&apos;Engineer&apos;)
+name: Adam age: 45 other: {&apos;gender&apos;: &apos;M&apos;, &apos;job&apos;: &apos;Engineer&apos;}
+</code></pre><h4 id="命名关键字参数"><a href="#命名关键字参数" class="headerlink" title="命名关键字参数"></a>命名关键字参数</h4><p>对于关键字参数，函数的调用者可以传入任意不受限制的关键字参数。至于到底传入了哪些，就需要在函数内部通过kw检查。</p>
+<p>仍以person()函数为例，我们希望检查是否有city和job参数：</p>
+<pre><code>def person(name, age, **kw):
+    if &apos;city&apos; in kw:
+        # 有city参数
+        pass
+    if &apos;job&apos; in kw:
+        # 有job参数
+        pass
+    print(&apos;name:&apos;, name, &apos;age:&apos;, age, &apos;other:&apos;, kw)
+</code></pre><p>但是调用者仍可以传入不受限制的关键字参数：</p>
+<pre><code>&gt;&gt;&gt; person(&apos;Jack&apos;, 24, city=&apos;Beijing&apos;, addr=&apos;Chaoyang&apos;, zipcode=123456)
+</code></pre><p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
+<pre><code>def person(name, age, *, city, job):
+    print(name, age, city, job)
+</code></pre><p>和关键字参数<em>*kw不同，命名关键字参数需要一个特殊分隔符</em>，*后面的参数被视为命名关键字参数。</p>
+<p>调用方式如下：</p>
+<pre><code>&gt;&gt;&gt; person(&apos;Jack&apos;, 24, city=&apos;Beijing&apos;, job=&apos;Engineer&apos;)
+Jack 24 Beijing Engineer
+</code></pre><p>如果函数定义中已经有了一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊分隔符*了：</p>
+<pre><code>def person(name, age, *args, city, job):
+    print(name, age, args, city, job)
+</code></pre><p>命名关键字参数必须传入参数名，这和位置参数不同。如果没有传入参数名，调用将报错：</p>
+<pre><code>&gt;&gt;&gt; person(&apos;Jack&apos;, 24, &apos;Beijing&apos;, &apos;Engineer&apos;)
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: person() takes 2 positional arguments but 4 were given
+</code></pre><h4 id="参数组合"><a href="#参数组合" class="headerlink" title="参数组合"></a>参数组合</h4><p>在Python中定义函数，可以用必选参数、默认参数、可变参数、关键字参数和命名关键字参数，这5种参数都可以组合使用。但是请注意，参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数和关键字参数。</p>
+<p>比如定义一个函数，包含上述若干种参数：</p>
+<pre><code>def f1(a, b, c=0, *args, **kw):
+    print(&apos;a =&apos;, a, &apos;b =&apos;, b, &apos;c =&apos;, c, &apos;args =&apos;, args, &apos;kw =&apos;, kw)
+
+def f2(a, b, c=0, *, d, **kw):
+    print(&apos;a =&apos;, a, &apos;b =&apos;, b, &apos;c =&apos;, c, &apos;d =&apos;, d, &apos;kw =&apos;, kw)
+</code></pre><p>在函数调用的时候，Python解释器自动按照参数位置和参数名把对应的参数传进去。</p>
+<pre><code>&gt;&gt;&gt; f1(1, 2)
+a = 1 b = 2 c = 0 args = () kw = {}
+&gt;&gt;&gt; f1(1, 2, c=3)
+a = 1 b = 2 c = 3 args = () kw = {}
+&gt;&gt;&gt; f1(1, 2, 3, &apos;a&apos;, &apos;b&apos;)
+a = 1 b = 2 c = 3 args = (&apos;a&apos;, &apos;b&apos;) kw = {}
+&gt;&gt;&gt; f1(1, 2, 3, &apos;a&apos;, &apos;b&apos;, x=99)
+a = 1 b = 2 c = 3 args = (&apos;a&apos;, &apos;b&apos;) kw = {&apos;x&apos;: 99}
+&gt;&gt;&gt; f2(1, 2, d=99, ext=None)
+a = 1 b = 2 c = 0 d = 99 kw = {&apos;ext&apos;: None}
+</code></pre><p>最神奇的是通过一个tuple和dict，你也可以调用上述函数：</p>
+<pre><code>&gt;&gt;&gt; args = (1, 2, 3, 4)
+&gt;&gt;&gt; kw = {&apos;d&apos;: 99, &apos;x&apos;: &apos;#&apos;}
+&gt;&gt;&gt; f1(*args, **kw)
+a = 1 b = 2 c = 3 args = (4,) kw = {&apos;d&apos;: 99, &apos;x&apos;: &apos;#&apos;}
+&gt;&gt;&gt; args = (1, 2, 3)
+&gt;&gt;&gt; kw = {&apos;d&apos;: 88, &apos;x&apos;: &apos;#&apos;}
+&gt;&gt;&gt; f2(*args, **kw)
+a = 1 b = 2 c = 3 d = 88 kw = {&apos;x&apos;: &apos;#&apos;}
+</code></pre><p>所以，对于任意函数，都可以通过类似func(<em>args, *</em>kw)的形式调用它，无论它的参数是如何定义的。</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>Python的函数具有非常灵活的参数形态，既可以实现简单的调用，又可以传入非常复杂的参数。</p>
+<p>默认参数一定要用不可变对象，如果是可变对象，程序运行时会有逻辑错误！</p>
+<p>要注意定义可变参数和关键字参数的语法：</p>
+<p>*args是可变参数，args接收的是一个tuple；</p>
+<p>**kw是关键字参数，kw接收的是一个dict。</p>
+<p>以及调用函数时如何传入可变参数和关键字参数的语法：</p>
+<p>可变参数既可以直接传入：func(1, 2, 3)，又可以先组装list或tuple，再通过<em>args传入：func(</em>(1, 2, 3))；</p>
+<p>关键字参数既可以直接传入：func(a=1, b=2)，又可以先组装dict，再通过<strong>kw传入：func(</strong>{‘a’: 1, ‘b’: 2})。</p>
+<p>使用<em>args和*</em>kw是Python的习惯写法，当然也可以用其他参数名，但最好使用习惯用法。</p>
+<p>命名的关键字参数是为了限制调用者可以传入的参数名，同时可以提供默认值。</p>
+<p>定义命名的关键字参数在没有可变参数的情况下不要忘了写分隔符*，否则定义的将是位置参数。</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/06/02/2.python结构控制语句/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"MikeBison"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+                autoDetectHeadings: true,
+		      	enableToTopButton: true,
+		      	title: "文章内容",
+		      	itemPrefix: "-",
+		      	css: {
+		          fontSize: "14px",
+		          largeFontSize: "18px",
+		      	},
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
