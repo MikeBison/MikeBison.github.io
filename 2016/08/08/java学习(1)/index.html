@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      flex(弹性布局)语法篇 | MikeBison 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="MikeBison">
+    
+    
+
+    <meta name="description" content="1.容器属性:flex有俩条轴横向叫做main axis纵向叫做cross axis
+主轴起始的地方叫做main start主轴结束的地方叫做main end交叉轴起始叫做cross start交叉轴结束叫做cross end
+flex-deriction: row | row-reverse | column | column-reverse
+内容起始方向,分别为横向左起,横向右起,纵向上起,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flex(弹性布局)语法篇 | MikeBison">
+<meta property="og:url" content="http://MikeBison.com/2016/08/08/java学习(1)/index.html">
+<meta property="og:site_name" content="MikeBison">
+<meta property="og:description" content="1.容器属性:flex有俩条轴横向叫做main axis纵向叫做cross axis
+主轴起始的地方叫做main start主轴结束的地方叫做main end交叉轴起始叫做cross start交叉轴结束叫做cross end
+flex-deriction: row | row-reverse | column | column-reverse
+内容起始方向,分别为横向左起,横向右起,纵向上起,">
+<meta property="og:updated_time" content="2016-08-08T15:27:27.899Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flex(弹性布局)语法篇 | MikeBison">
+<meta name="twitter:description" content="1.容器属性:flex有俩条轴横向叫做main axis纵向叫做cross axis
+主轴起始的地方叫做main start主轴结束的地方叫做main end交叉轴起始叫做cross start交叉轴结束叫做cross end
+flex-deriction: row | row-reverse | column | column-reverse
+内容起始方向,分别为横向左起,横向右起,纵向上起,">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">MikeBison</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          我们不在乎成功</br>
+          我们不畏惧失败</br>
+          因为在灵魂的权衡中</br>
+          没有什么算成功</br>
+          没有什么算失败</br>
+          我们要做的</br>
+          只是作为世界的一个节点</br>
+          构建整个世界</br>
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/MikeBison" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <li class="navigation__item">
+      <a href="http://weibo.com/u/1723898163?topnav=1&wvr=6&topsug=1&is_all=1" title="">
+        <i class='icon cs-icon-weibo'></i>
+        <span class="label">Douban</span>
+      </a>
+    </li>
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">flex(弹性布局)语法篇</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-08-08" class="post-meta__date date">2016-08-08</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/css/">-css</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/css-学习笔记/">-css -学习笔记</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <hr>
+<h3 id="1-容器属性"><a href="#1-容器属性" class="headerlink" title="1.容器属性:"></a>1.容器属性:</h3><p>flex有俩条轴<br>横向叫做main axis<br>纵向叫做cross axis</p>
+<p>主轴起始的地方叫做main start<br>主轴结束的地方叫做main end<br>交叉轴起始叫做cross start<br>交叉轴结束叫做cross end</p>
+<pre><code>flex-deriction: row | row-reverse | column | column-reverse
+</code></pre><p>内容起始方向,分别为横向左起,横向右起,纵向上起,纵向下起</p>
+<pre><code>flex-wrap: nowrap | wrap | wrap-reverse
+</code></pre><p>内容换行,默认不换,第一行在上,第一行在下</p>
+<pre><code>flex-flow: flex-direction | flex-wrap
+</code></pre><p>这个属性是以上俩个属性的简写,值写为row nowrap</p>
+<pre><code>justify-content: flex-start | flex-end | center | space-between | space-around
+</code></pre><p>定义项目在主轴上的对其方式分别是,左对齐,右对齐,居中,居中对齐,每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍</p>
+<pre><code>align-items: flex-start | flex-end | center | baseline | stretch
+</code></pre><p>定义项目在交叉轴上如何对齐</p>
+<pre><code>flex-start：交叉轴的起点对齐。
+flex-end：交叉轴的终点对齐。
+center：交叉轴的中点对齐。
+baseline: 项目的第一行文字的基线对齐。
+stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+
+flex-content: flex-start | flex-end | center | space-between | space-around | baseline | stretch
+flex-start：与交叉轴的起点对齐。
+flex-end：与交叉轴的终点对齐。
+center：与交叉轴的中点对齐。
+space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+stretch（默认值）：轴线占满整个交叉轴。
+</code></pre><p>2.项目属性(item)</p>
+<pre><code>order:number
+</code></pre><p>item的位置顺序,越小越靠前,默认为0,可以为负值</p>
+<pre><code>flex-grow: number
+</code></pre><p>项目放大比例,默认为0,如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+<pre><code>flex-shrink: number
+</code></pre><p>项目缩小比例,默认为0,如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。无负值</p>
+<pre><code>flex-basis: length | auto
+</code></pre><p>flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。</p>
+<pre><code>flex: none | [order flex-grow flex-strinsh]
+</code></pre><p>上边三者的简写</p>
+<pre><code>flex-self:auto | flex-start | flex-end | center | baseline | strinsh
+</code></pre><p>定义item有不一样的值</p>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/08/08/java学习(1)/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"MikeBison"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+                autoDetectHeadings: true,
+		      	enableToTopButton: true,
+		      	title: "文章内容",
+		      	itemPrefix: "-",
+		      	css: {
+		          fontSize: "14px",
+		          largeFontSize: "18px",
+		      	},
+            });
+        });
+    </script>
+
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
